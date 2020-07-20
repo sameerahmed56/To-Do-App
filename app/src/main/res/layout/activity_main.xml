@@ -47,20 +47,6 @@
         app:rippleColor="#EAE8E0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/saveBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_gravity="end|bottom"
-        android:layout_marginTop="-140dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#FFC107"
-        android:paddingTop="15dp"
-        android:src="@drawable/ic_baseline_save_24"
-        app:backgroundTint="#FFC107"
-        app:rippleColor="#EAE8E0" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/deleteSelectedButton"
         android:layout_width="wrap_content"
         android:layout_height="56dp"

@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> checkedIntArray = new ArrayList<>();
     private MoviesAdapter intList = new MoviesAdapter(movieList,checkedIntArray);
     private MoviesAdapter mAdapter;
+    private FloatingActionButton deleteSelectedButton;
 
 
     @Override
@@ -87,13 +88,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG,"onCreate: in");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 //        loading shared preferences data
         loadData();
 
-        FloatingActionButton deleteSelectedButton = findViewById(R.id.deleteSelectedButton);
+        deleteSelectedButton = findViewById(R.id.deleteSelectedButton);
         deleteSelectedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,15 +104,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton saveBtn = findViewById(R.id.saveBtn);
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveData();
-                Toast.makeText(getApplicationContext(),  "All Task Saved", Toast.LENGTH_SHORT).show();
-
-            }
-        });
 
 //        on floating btn click
         FloatingActionButton addBtn = findViewById(R.id.addBtn);
@@ -127,8 +121,14 @@ public class MainActivity extends AppCompatActivity {
         // set up the RecyclerView
         buildRecyclerView();
 
+        if(movieList.size() == 0){
+            deleteSelectedButton.setVisibility(View.INVISIBLE);
+        }
+        Log.d(TAG,"onCreate: Out");
+
     }
 
+//METHODS START
 
     public void bottomSheetOpening(){
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this, R.style.BottomSheetDialogTheme);
@@ -141,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
                 if(toDoString.length() != 0 ) {
                     movieList.add(new MovieModel(toDoString,false));
                     mAdapter.notifyDataSetChanged();
+                    deleteSelectedButton = findViewById(R.id.deleteSelectedButton);
+                    deleteSelectedButton.setVisibility(View.VISIBLE);
                     bottomSheetDialog.dismiss();
                 }
                 else{
@@ -151,8 +153,6 @@ public class MainActivity extends AppCompatActivity {
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
     }
-
-//    Methods Start
 
     private void deleteSelectedCheckbox(){
         checkedIntArray = intList.getIntArray();
@@ -166,6 +166,13 @@ public class MainActivity extends AppCompatActivity {
                 saveData();
             }
             checkedIntArray.clear();
+        }
+        else {
+            Toast.makeText(getApplicationContext(),  "Nothing Selected To Delete", Toast.LENGTH_SHORT).show();
+        }
+        if(movieList.size() == 0){
+            deleteSelectedButton = findViewById(R.id.deleteSelectedButton);
+            deleteSelectedButton.setVisibility(View.INVISIBLE);
         }
 
     }
