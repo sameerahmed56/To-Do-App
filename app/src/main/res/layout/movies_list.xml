@@ -17,7 +17,7 @@ android:layout_gravity="center_horizontal">
     android:paddingTop="6dp"
     android:paddingBottom="6dp"
     android:orientation="horizontal"
-    android:background="#F3F1F0EA"
+    android:background="#F3EAEDF1"
     android:weightSum="2">
 
     <CheckBox
@@ -36,7 +36,7 @@ android:layout_gravity="center_horizontal">
         android:layout_weight="0.3"
         android:fontFamily="@font/roboto"
         android:text="@string/add_to_do"
-        android:textColor="#1B2D47"
+        android:textColor="#64686E"
         android:textSize="20sp" />
 
 </LinearLayout>

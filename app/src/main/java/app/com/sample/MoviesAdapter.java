@@ -1,4 +1,6 @@
 package app.com.sample;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,8 +64,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
 
                 if (isChecked) {
                     moviesList.get(position).setCheck(true);
+                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.title.setTextColor(Color.parseColor("#969CA5"));
+
                 } else {
                     moviesList.get(position).setCheck(false);
+                    holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+                    holder.title.setTextColor(Color.parseColor("#64686E"));
+
+
                 }
 //----
                 if (moviesList.size() > 0){
@@ -80,15 +89,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
                 else {
                     Boolean s = true;
                 }
-//----
-                if(intArray.size()>0){
-                    Snackbar snack = Snackbar.make(holder.itemView, "Something is Selected", Snackbar.LENGTH_SHORT);
-                    snack.show();
-                }
-                else {
-                    Snackbar snack = Snackbar.make(holder.itemView, "Nothing is Selected", Snackbar.LENGTH_SHORT);
-                    snack.show();
-                }
+
 
             }
         });
