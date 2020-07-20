@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomSheetContainer"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/addTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_any_task"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="22dp"
+        android:textColor="@color/colorPrimary"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <Button
+        android:id="@+id/doBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_to_do"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_marginRight="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/to_do_button_sheet"
+        android:textColor="@color/colorWhite"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="180dp"/>
+
+
+</LinearLayout>

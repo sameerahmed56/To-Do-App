@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/cardView"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_marginBottom="6dp"
+app:cardCornerRadius="7dp"
+android:layout_marginLeft="5dp"
+android:layout_marginRight="5dp"
+android:layout_gravity="center_horizontal">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:orientation="horizontal"
+    android:background="#F3F1F0EA"
+    android:weightSum="2">
+
+    <CheckBox
+        android:id="@+id/toDoCheck"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.7"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:fontFamily="@font/roboto"
+        android:text="@string/add_to_do"
+        android:textColor="#1B2D47"
+        android:textSize="20sp" />
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/text_view_background"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center_horizontal"
+        android:letterSpacing="0.06"
+        android:paddingTop="30dp"
+        android:text="To Do List"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="-30dp"
+        android:paddingTop="15dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginTop="-80dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#ffffff"
+        android:paddingTop="15dp"
+        android:src="@drawable/ic_plus"
+        app:backgroundTint="#FFFFFF"
+        app:rippleColor="#EAE8E0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginTop="-140dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFC107"
+        android:paddingTop="15dp"
+        android:src="@drawable/ic_baseline_save_24"
+        app:backgroundTint="#FFC107"
+        app:rippleColor="#EAE8E0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteSelectedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginTop="-140dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#C11010"
+        android:paddingTop="15dp"
+        android:src="@drawable/ic_baseline_delete_24"
+        app:backgroundTint="#C11010"
+        app:rippleColor="#EAE8E0" />
+
+
+</LinearLayout>
