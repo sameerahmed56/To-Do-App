@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,8 +21,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "mainActivity";
     private List<MovieModel> movieList = new ArrayList<>();
@@ -137,9 +142,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText addEditText = bottomSheetView.findViewById(R.id.addTextView);
-                String toDoString = addEditText.getText().toString();
+                String toDoString = addEditText.getText().toString().replaceAll("  ", "");
+                String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+
                 if(toDoString.length() != 0 ) {
-                    movieList.add(new MovieModel(toDoString,false));
+                    movieList.add(new MovieModel(toDoString,date,false));
                     mAdapter.notifyDataSetChanged();
                     deleteSelectedButton = findViewById(R.id.deleteSelectedButton);
                     deleteSelectedButton.setVisibility(View.VISIBLE);

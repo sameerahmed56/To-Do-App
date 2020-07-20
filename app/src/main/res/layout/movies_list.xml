@@ -10,14 +10,18 @@ app:cardCornerRadius="7dp"
 android:layout_marginLeft="5dp"
 android:layout_marginRight="5dp"
 android:layout_gravity="center_horizontal">
-
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:paddingTop="6dp"
     android:paddingBottom="6dp"
-    android:orientation="horizontal"
     android:background="#F3EAEDF1"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:weightSum="2">
 
     <CheckBox
@@ -38,7 +42,28 @@ android:layout_gravity="center_horizontal">
         android:text="@string/add_to_do"
         android:textColor="#64686E"
         android:textSize="20sp" />
-
 </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="1">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        />
 
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="15/07/2020"
+        android:textColor="#2C7BA5"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_weight=".7"
+        />
+</LinearLayout>
+</LinearLayout>
 </androidx.cardview.widget.CardView>
