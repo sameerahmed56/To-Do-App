@@ -60,7 +60,7 @@ android:layout_gravity="center_horizontal">
         android:layout_height="wrap_content"
         android:text="15/07/2020"
         android:textColor="#2C7BA5"
-        android:textSize="15sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         android:layout_weight=".7"
         />

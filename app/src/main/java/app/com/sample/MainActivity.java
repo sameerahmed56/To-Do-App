@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -146,8 +145,10 @@ public class MainActivity extends AppCompatActivity {
                 String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
                 if(toDoString.length() != 0 ) {
-                    movieList.add(new MovieModel(toDoString,date,false));
-                    mAdapter.notifyDataSetChanged();
+                    movieList.add(movieList.size(),new MovieModel(toDoString,date,false));
+                    mAdapter.notifyItemInserted(movieList.size());
+//                    mAdapter.notifyItemRangeChanged(0, movieList.size());
+
                     deleteSelectedButton = findViewById(R.id.deleteSelectedButton);
                     deleteSelectedButton.setVisibility(View.VISIBLE);
                     bottomSheetDialog.dismiss();
@@ -169,9 +170,9 @@ public class MainActivity extends AppCompatActivity {
             for (int i = checkedIntArray.size() - 1; i >= 0 ; i--) {
                 movieList.remove(movieList.get(checkedIntArray.get(i)));
                 mAdapter.notifyItemRemoved(checkedIntArray.get(i));
-                mAdapter.notifyItemRangeChanged(checkedIntArray.get(i), movieList.size());
-                saveData();
+//                mAdapter.notifyItemRangeChanged(checkedIntArray.get(i), movieList.size());
             }
+            saveData();
             checkedIntArray.clear();
         }
         else {
